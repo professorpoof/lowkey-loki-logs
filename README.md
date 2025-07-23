@@ -64,3 +64,4 @@ git clone https://github.com/your-username/grafana-loki-dashboard.git
 
 cd grafana-loki-dashboard
 
+🧪 Testing PR creation from feature/docs-update
