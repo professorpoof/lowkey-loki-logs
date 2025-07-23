@@ -1,0 +1,18 @@
+# Docker-related
+*.env
+docker-compose.override.yml
+.dockerignore
+
+# Log files
+logs/
+*.log
+
+# Loki/Promtail volumes
+volumes/
+**/volumes/
+**/tmp/
+
+# OS & editor junk
+.DS_Store
+Thumbs.db
+.vscode/
