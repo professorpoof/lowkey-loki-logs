@@ -39,3 +39,60 @@ Designed to generate fake HTTP success traffic and visualize real-time ingestion
 
 4. Import the dashboard:
    - File: `grafana-dashboard.json`
+
+---
+
+## 🧪 Generating Logs Locally
+
+To simulate real-time log traffic, use the included PowerShell script:
+
+### ▶️ Start the Log Spammer
+
+From the root of this repo:
+
+```powershell
+.\log-spammer.ps1
+```
+
+This will generate randomized log lines (INFO, WARN, ERROR) like:
+
+```
+2025-07-23 01:12:35 [INFO] HTTP client success  
+2025-07-23 01:12:37 [ERROR] Database timeout  
+2025-07-23 01:12:39 [WARN] Rate limit triggered
+```
+
+Logs are written to:
+
+```plaintext
+logs/spammer.log
+```
+
+Promtail ships those logs to Loki, where they appear in your Grafana dashboard under the `spammer` job.
+
+---
+
+### 🛑 To Stop the Spammer
+
+In the terminal where it's running, press:
+
+```plaintext
+Ctrl + C
+```
+
+To clear the log file (optional):
+```powershell
+Remove-Item .\logs\spammer.log
+```
+
+---
+
+### 👀 Live Log View (optional)
+
+You can tail the log in real time with:
+
+```powershell
+Get-Content .\logs\spammer.log -Wait
+```
+
+This is helpful for debugging or watching logs flow in parallel with Grafana.
