@@ -1,0 +1,8 @@
+require 'rake'
+
+namespace :dashboards do
+  desc 'Generate app_logs dashboard JSON'
+  task :generate do
+    ruby 'dashboards/app_logs.rb'
+  end
+end

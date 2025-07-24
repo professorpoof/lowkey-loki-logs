@@ -16,3 +16,5 @@ volumes/
 .DS_Store
 Thumbs.db
 .vscode/
+.bundle/
+vendor/
